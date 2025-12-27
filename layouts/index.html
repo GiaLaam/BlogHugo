@@ -1,7 +1,8 @@
 {{ define "main" }}
+{{- $coverImage := "images/anhnen.jpg" | relURL -}}
 <!-- Profile hero -->
 <section id="profile" class="profile-hero">
-  <div class="cover" role="img" aria-label="Ảnh bìa" style="background-image: url('/images/anhnen.jpg');">
+  <div class="cover" role="img" aria-label="Ảnh bìa" data-bg-image="{{ $coverImage }}">
     <div class="cover-overlay"></div>
     <div class="container h-100 d-flex flex-column justify-content-end pb-5">
       <div class="profile-meta text-center">
@@ -371,7 +372,7 @@
                 
                 <a href="https://www.credly.com/badges/de6b30b7-cf59-40cb-aaf8-7b298c40f5d0" target="_blank" class="certificate-card">
                   <div class="certificate-image">
-                    <img src="/images/javascript-essentials-1.png" alt="JavaScript Essentials 1 - Cisco">
+                    <img src='{{ "images/javascript-essentials-1.png" | relURL }}' alt="JavaScript Essentials 1 - Cisco">
                   </div>
                   <div class="certificate-info">
                     <h4 class="certificate-title">JavaScript Essentials 1</h4>
@@ -381,7 +382,7 @@
 
                 <a href="https://www.credly.com/badges/a0850191-b808-443a-a24f-60056d0478e6" target="_blank" class="certificate-card">
                   <div class="certificate-image">
-                    <img src="/images/networking-basics.png" alt="Networking Basics - Cisco">
+                    <img src='{{ "images/networking-basics.png" | relURL }}' alt="Networking Basics - Cisco">
                   </div>
                   <div class="certificate-info">
                     <h4 class="certificate-title">Networking Basics</h4>
