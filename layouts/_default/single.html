@@ -1,0 +1,40 @@
+{{ define "main" }}
+<div class="blog-detail-header">
+  <div class="container">
+    <button onclick="history.back()" class="btn-back mb-4">
+      <i class="fas fa-arrow-left me-2"></i>Quay lại
+    </button>
+    <div class="blog-tags-header mb-3">
+      {{ range .Params.tags }}
+      <span class="blog-tag-spotify">{{ . }}</span>
+      {{ end }}
+    </div>
+    <h1 class="blog-detail-title">{{ .Title }}</h1>
+    <p class="blog-detail-meta">
+      <span><i class="fas fa-calendar-alt me-1"></i>{{ .Date.Format "02/01/2006" }}</span>
+      <span class="mx-2">•</span>
+      <span><i class="fas fa-user me-1"></i>{{ .Site.Params.author }}</span>
+    </p>
+  </div>
+</div>
+
+<main class="blog-detail-content">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <article class="blog-article-card">
+          <div class="article-content">
+            {{ .Content }}
+          </div>
+        </article>
+        
+        <div class="text-center mt-4 mb-5">
+          <button onclick="history.back()" class="btn-spotify">
+            <i class="fas fa-arrow-left me-2"></i>Quay lại trang trước
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{{ end }}

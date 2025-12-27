@@ -1,0 +1,17 @@
+baseURL = "https://GiaLaam.github.io/BlogHugo/"
+languageCode = "vi"
+title = "Blog Cá Nhân - Nguyễn Hữu Gia Lâm"
+
+[params]
+  author = "Nguyễn Hữu Gia Lâm"
+  description = "Blog chia sẻ về lập trình Java & JavaScript"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Blog"
+    url = "/posts/"
+    weight = 2

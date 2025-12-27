@@ -1,0 +1,426 @@
+{{ define "main" }}
+<!-- Profile hero -->
+<section id="profile" class="profile-hero">
+  <div class="cover" role="img" aria-label="Ảnh bìa" style="background-image: url('/images/anhnen.jpg');">
+    <div class="cover-overlay"></div>
+    <div class="container h-100 d-flex flex-column justify-content-end pb-5">
+      <div class="profile-meta text-center">
+        <div class="profile-text text-white">
+          <h1 class="display-5 mb-2">Nguyễn Hữu Gia Lâm</h1>
+          <p class="lead mb-2">Công nghệ thông tin - Công nghệ phần mềm</p>
+          <p class="lead mb-2">Back-End Developer</p>
+          <p class="mb-3"><i class="fas fa-map-marker-alt me-1"></i>Hoàng Hữu Nam, Quận 9, HCM • <i class="fas fa-birthday-cake me-1"></i> 30/04/2004</p>
+          
+          <div class="profile-contact mb-4">
+            <p class="mb-1"><i class="fas fa-envelope me-2"></i><a href="mailto:Lameem2004@gmail.com" class="text-white">Lameem2004@gmail.com</a></p>
+            <p class="mb-1"><i class="fas fa-phone me-2"></i><a href="tel:+84327621734" class="text-white">0327621734</a></p>
+          </div>
+
+          <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <a class="btn btn-light" href="https://github.com/GiaLaam" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-github me-2"></i>GitHub
+            </a>
+            <a class="btn btn-light" href="https://www.facebook.com/nguyen.gialam.1809/" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-facebook me-2"></i>Facebook
+            </a>
+            <a class="btn btn-primary" href="/CV/CV-XinViec.pdf" download>
+              <i class="fas fa-download me-2"></i>Tải CV
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="container py-5">
+  <div class="row gx-5">
+    <section class="col-12">
+      
+      <!-- About Section -->
+      <article id="about" class="card shadow-sm mb-4">
+        <div class="card-body">
+          <h3 class="section-title"><i class="fas fa-user me-2"></i>Về tôi</h3>
+          <div class="about-content">
+            <p class="about-quote">
+              <i class="fas fa-quote-left quote-icon"></i>
+              Là một người thân thiện, yêu động vật, luôn cố gắng trong công việc. Luôn tự hào là người con vùng núi Gia Lai.
+              <i class="fas fa-quote-right quote-icon"></i>
+            </p>
+            <div class="about-interests">
+              <h4 class="interests-title">Sở thích</h4>
+              <div class="interests-grid">
+                <div class="interest-item">
+                  <div class="interest-icon"><i class="fas fa-dumbbell"></i></div>
+                  <span>Tập Gym</span>
+                </div>
+                <div class="interest-item">
+                  <div class="interest-icon"><i class="fas fa-motorcycle"></i></div>
+                  <span>Đi Phượt</span>
+                </div>
+                <div class="interest-item">
+                  <div class="interest-icon"><i class="fas fa-headphones"></i></div>
+                  <span>Nghe Nhạc</span>
+                </div>
+                <div class="interest-item">
+                  <div class="interest-icon"><i class="fas fa-code"></i></div>
+                  <span>Lập Trình</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-strengths">
+              <div class="strength-item strength">
+                <div class="strength-header">
+                  <i class="fas fa-check-circle"></i>
+                  <h4>Điểm mạnh</h4>
+                </div>
+                <p>Là một con người 70% là hướng ngoại và 30% là hướng nội. Luôn có trách nhiệm với mỗi 
+                  công việc được giao. Có khả năng áp dụng AI vào công việc và học tập, giúp tăng hiệu suất và tối ưu hóa quy trình làm việc. 
+                  Luôn muốn được học hỏi thêm nhưng thứ mới mẻ.
+                </p>
+              </div>
+              <div class="strength-item weakness">
+                <div class="strength-header">
+                  <i class="fas fa-exclamation-circle"></i>
+                  <h4>Điểm yếu</h4>
+                </div>
+                <p>Mặc dù có thể hoàn thành tốt các công việc được giao, nhưng vẫn còn khá yếu trong việc chủ động đề xuất và khởi xướng công việc mới.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Skills & Contact Row -->
+      <div class="row gx-4 mb-4">
+        <div class="col-lg-6">
+          <div class="card shadow-sm h-100" id="skills">
+            <div class="card-body">
+              <h3 class="section-title"><i class="fas fa-code me-2"></i>Kỹ năng</h3>
+              
+              <div class="skills-category">
+                <h4 class="skills-category-title"><i class="fas fa-laptop-code me-2"></i>Ngôn ngữ</h4>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">C#</span>
+                    <span class="skill-percent">80%</span>
+                  </div>
+                  <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Java</span>
+                    <span class="skill-percent">50%</span>
+                  </div>
+                  <div class="skill-bar"><div class="skill-progress" style="width: 50%"></div></div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">JavaScript</span>
+                    <span class="skill-percent">60%</span>
+                  </div>
+                  <div class="skill-bar"><div class="skill-progress" style="width: 60%"></div></div>
+                </div>
+              </div>
+
+              <div class="skills-category">
+                <h4 class="skills-category-title"><i class="fas fa-database me-2"></i>Database</h4>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">SQL Server</span>
+                    <span class="skill-percent">75%</span>
+                  </div>
+                  <div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">MongoDB</span>
+                    <span class="skill-percent">50%</span>
+                  </div>
+                  <div class="skill-bar"><div class="skill-progress" style="width: 50%"></div></div>
+                </div>
+              </div>
+
+              <div class="skills-category">
+                <h4 class="skills-category-title"><i class="fas fa-tools me-2"></i>Tools</h4>
+                <div class="tools-grid">
+                  <div class="tool-item" title="Visual Studio">
+                    <i class="fas fa-code"></i>
+                  </div>
+                  <div class="tool-item" title="Git">
+                    <i class="fab fa-git-alt"></i>
+                  </div>
+                  <div class="tool-item" title="GitHub">
+                    <i class="fab fa-github"></i>
+                  </div>
+                  <div class="tool-item" title="Canva">
+                    <i class="fas fa-palette"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <article id="contact" class="card shadow-sm h-100">
+            <div class="card-body">
+              <h3 class="section-title"><i class="fas fa-paper-plane me-2"></i>Liên hệ</h3>
+              
+              <div class="contact-list">
+                <a href="mailto:Lameem2004@gmail.com" class="contact-item">
+                  <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                  <div class="contact-info">
+                    <span class="contact-label">Email</span>
+                    <span class="contact-value">Lameem2004@gmail.com</span>
+                  </div>
+                </a>
+                
+                <a href="tel:+84327621734" class="contact-item">
+                  <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                  <div class="contact-info">
+                    <span class="contact-label">Điện thoại</span>
+                    <span class="contact-value">0327 621 734</span>
+                  </div>
+                </a>
+                
+                <a href="https://github.com/GiaLaam" target="_blank" class="contact-item">
+                  <div class="contact-icon"><i class="fab fa-github"></i></div>
+                  <div class="contact-info">
+                    <span class="contact-label">GitHub</span>
+                    <span class="contact-value">@GiaLaam</span>
+                  </div>
+                </a>
+                
+                <a href="https://www.facebook.com/nguyen.gialam.1809/" target="_blank" class="contact-item">
+                  <div class="contact-icon"><i class="fab fa-facebook"></i></div>
+                  <div class="contact-info">
+                    <span class="contact-label">Facebook</span>
+                    <span class="contact-value">Gia Lâm</span>
+                  </div>
+                </a>
+              </div>
+
+              <div class="contact-cta">
+                <p>Sẵn sàng hợp tác!</p>
+                <a href="mailto:Lameem2004@gmail.com" class="btn btn-primary w-100">
+                  <i class="fas fa-envelope me-2"></i>Gửi Email
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="row gx-4">
+        <div class="col-12">
+          
+          <!-- Education Section -->
+          <article id="education" class="card shadow-sm mb-4">
+            <div class="card-body">
+              <h3 class="section-title"><i class="fas fa-graduation-cap me-2"></i>Học vấn</h3>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <div class="timeline-header">
+                      <h4 class="timeline-title">Đại học Công Nghệ TP.HCM (HUTECH)</h4>
+                      <span class="timeline-date"><i class="fas fa-calendar-alt me-1"></i>2022 - Hiện tại</span>
+                    </div>
+                    <p class="timeline-subtitle"><i class="fas fa-book me-1"></i>Chuyên ngành: Công nghệ phần mềm</p>
+                    <p class="timeline-desc">Sinh viên năm 4, khóa K22. Đang học tập và rèn luyện các kỹ năng lập trình, phát triển phần mềm.</p>
+                    <div class="timeline-tags">
+                      <span class="tag">Sinh viên năm 4</span>
+                      <span class="tag">Khóa K22</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <div class="timeline-header">
+                      <h4 class="timeline-title">THPT Nguyễn Khuyến</h4>
+                      <span class="timeline-date"><i class="fas fa-calendar-alt me-1"></i>2020 - 2022</span>
+                    </div>
+                    <p class="timeline-subtitle"><i class="fas fa-school me-1"></i>Trung học phổ thông</p>
+                    <p class="timeline-desc">Hoàn thành chương trình trung học phổ thông với 3 năm học tập và rèn luyện.</p>
+                    <div class="timeline-tags">
+                      <span class="tag">3 năm</span>
+                      <span class="tag">Gia Lai</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <div class="timeline-header">
+                      <h4 class="timeline-title">THCS Đề Thám</h4>
+                      <span class="timeline-date"><i class="fas fa-calendar-alt me-1"></i>2016 - 2020</span>
+                    </div>
+                    <p class="timeline-subtitle"><i class="fas fa-school me-1"></i>Trung học cơ sở</p>
+                    <p class="timeline-desc">Hoàn thành chương trình trung học cơ sở với 4 năm học tập và rèn luyện.</p>
+                    <div class="timeline-tags">
+                      <span class="tag">4 năm</span>
+                      <span class="tag">Gia Lai</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Experience Section -->
+          <article id="experience" class="card shadow-sm mb-4">
+            <div class="card-body">
+              <h3 class="section-title"><i class="fas fa-briefcase me-2"></i>Kinh nghiệm</h3>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <div class="timeline-header">
+                      <h4 class="timeline-title">Nhân viên giao hàng</h4>
+                      <span class="timeline-date"><i class="fas fa-calendar-alt me-1"></i>2022 - Hiện tại</span>
+                    </div>
+                    <p class="timeline-subtitle"><i class="fas fa-motorcycle me-1"></i>ShopeeFood</p>
+                    <p class="timeline-desc">Giao hàng thực phẩm, đồ ăn cho khách hàng. Đảm bảo giao hàng nhanh chóng và đúng hẹn.</p>
+                    <div class="experience-skills">
+                      <div class="exp-skill"><i class="fas fa-route"></i> Định vị đường</div>
+                      <div class="exp-skill"><i class="fas fa-clock"></i> Đúng giờ</div>
+                      <div class="exp-skill"><i class="fas fa-smile"></i> Phục vụ khách hàng</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <div class="timeline-header">
+                      <h4 class="timeline-title">Nhân viên toàn thời gian</h4>
+                      <span class="timeline-date"><i class="fas fa-calendar-alt me-1"></i>10+ tháng</span>
+                    </div>
+                    <p class="timeline-subtitle"><i class="fas fa-building me-1"></i>Circle K Vietnam</p>
+                    <p class="timeline-desc">Phục vụ khách hàng, quản lý hàng hoá và vận hành cửa hàng tiện lợi.</p>
+                    <div class="experience-skills">
+                      <div class="exp-skill"><i class="fas fa-comments"></i> Giao tiếp</div>
+                      <div class="exp-skill"><i class="fas fa-clock"></i> Quản lý thời gian</div>
+                      <div class="exp-skill"><i class="fas fa-users"></i> Làm việc nhóm</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projects Section -->
+          <article id="projects" class="card shadow-sm mb-4">
+            <div class="card-body">
+              <h3 class="section-title"><i class="fas fa-rocket me-2"></i>Dự án cá nhân</h3>
+              <div class="projects-grid">
+                
+                <div class="project-card">
+                  <div class="project-icon">
+                    <i class="fas fa-music"></i>
+                  </div>
+                  <div class="project-info">
+                    <h4 class="project-title">Web Âm Nhạc</h4>
+                    <p class="project-desc">Website nghe nhạc trực tuyến với đầy đủ tính năng playlist, tìm kiếm và quản lý bài hát.</p>
+                    <div class="project-tech">
+                      <span>C#</span>
+                      <span>SQL Server</span>
+                      <span>MongoDB</span>
+                      <span>REST API</span>
+                    </div>
+                    <div class="project-links">
+                      <a href="https://github.com/GiaLaam/SoundAudio" class="project-link"><i class="fab fa-github"></i> Code</a>
+                      <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="project-card">
+                  <div class="project-icon">
+                    <i class="fas fa-headphones"></i>
+                  </div>
+                  <div class="project-info">
+                    <h4 class="project-title">SoundAudio</h4>
+                    <p class="project-desc">Ứng dụng nghe nhạc di động với giao diện hiện đại, hỗ trợ streaming và offline.</p>
+                    <div class="project-tech">
+                      <span>Flutter</span>
+                      <span>Dart</span>
+                      <span>REST API</span>
+                    </div>
+                    <div class="project-links">
+                      <a href="https://github.com/GiaLaam/SoundAudioMobile" class="project-link"><i class="fab fa-github"></i> Code</a>
+                      <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </article>
+
+          <!-- Certificates Section -->
+          <article id="certificates" class="card shadow-sm mb-4">
+            <div class="card-body">
+              <h3 class="section-title"><i class="fas fa-certificate me-2"></i>Chứng chỉ</h3>
+              <div class="certificates-grid">
+                
+                <a href="https://www.credly.com/badges/de6b30b7-cf59-40cb-aaf8-7b298c40f5d0" target="_blank" class="certificate-card">
+                  <div class="certificate-image">
+                    <img src="/images/javascript-essentials-1.png" alt="JavaScript Essentials 1 - Cisco">
+                  </div>
+                  <div class="certificate-info">
+                    <h4 class="certificate-title">JavaScript Essentials 1</h4>
+                    <p class="certificate-issuer"><i class="fas fa-building me-1"></i>Cisco Networking Academy</p>
+                  </div>
+                </a>
+
+                <a href="https://www.credly.com/badges/a0850191-b808-443a-a24f-60056d0478e6" target="_blank" class="certificate-card">
+                  <div class="certificate-image">
+                    <img src="/images/networking-basics.png" alt="Networking Basics - Cisco">
+                  </div>
+                  <div class="certificate-info">
+                    <h4 class="certificate-title">Networking Basics</h4>
+                    <p class="certificate-issuer"><i class="fas fa-building me-1"></i>Cisco Networking Academy</p>
+                  </div>
+                </a>
+
+              </div>
+            </div>
+          </article>
+
+          <!-- Blog Section -->
+          <article id="blog" class="blog-section-spotify mb-4">
+            <div>
+              <h3 class="section-title"><i class="fas fa-blog me-2"></i>Blog Lập Trình</h3>
+              <p class="text-muted mb-4">Chia sẻ kiến thức về Java, JavaScript & .NET Core</p>
+              <div class="row">
+                {{ range (where .Site.RegularPages "Section" "posts") }}
+                <div class="col-md-6 col-lg-4 mb-4">
+                  <div class="blog-card-item">
+                    <div class="blog-tags mb-2">
+                      {{ range .Params.tags }}
+                      <span class="blog-tag-small">{{ . }}</span>
+                      {{ end }}
+                    </div>
+                    <h4 class="blog-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+                    <p class="blog-date-small"><i class="fas fa-calendar-alt me-1"></i>{{ .Date.Format "02/01/2006" }}</p>
+                    <p class="blog-excerpt">{{ .Summary | plainify | truncate 80 }}</p>
+                    <a href="{{ .Permalink }}" class="btn btn-light blog-btn">Đọc thêm <i class="fas fa-arrow-right ms-1"></i></a>
+                  </div>
+                </div>
+                {{ end }}
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+    </section>
+  </div>
+</main>
+{{ end }}

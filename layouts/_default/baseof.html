@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    .blog-card {
+      background: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom: 2rem;
+    }
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    }
+    .blog-card-body {
+      padding: 1.5rem;
+    }
+    .blog-card h3 {
+      color: #1a1a2e;
+      margin-bottom: 0.5rem;
+    }
+    .blog-card h3 a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .blog-card h3 a:hover {
+      color: #1db954;
+    }
+    .blog-tag {
+      display: inline-block;
+      background: linear-gradient(135deg, #1db954, #1ed760);
+      color: #fff;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .blog-date {
+      color: #666;
+      font-size: 0.9rem;
+    }
+    .page-header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: #fff;
+      padding: 4rem 0;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .page-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .article-content {
+      line-height: 1.8;
+      font-size: 1.1rem;
+      color: #333;
+      background: #fff;
+    }
+    .article-content p {
+      color: #333;
+      margin-bottom: 1rem;
+    }
+    .article-content h2, .article-content h3 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: #1a1a2e;
+      font-weight: 600;
+    }
+    .article-content ul, .article-content ol {
+      color: #333;
+      margin-bottom: 1rem;
+    }
+    .article-content strong {
+      color: #1a1a2e;
+    }
+    .article-content pre {
+      background: #1e1e1e;
+      color: #d4d4d4;
+      padding: 1.5rem;
+      border-radius: 10px;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .article-content code {
+      background: #e8e8e8;
+      color: #c7254e;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-family: 'Consolas', monospace;
+    }
+    .article-content pre code {
+      background: transparent;
+      color: #d4d4d4;
+      padding: 0;
+    }
+    .article-content table {
+      width: 100%;
+      margin: 1rem 0;
+      border-collapse: collapse;
+    }
+    .article-content th, .article-content td {
+      border: 1px solid #ddd;
+      padding: 0.75rem;
+      color: #333;
+    }
+    .article-content th {
+      background: #f5f5f5;
+      font-weight: 600;
+    }
+    .blog-card-item {
+      background: #181818;
+      border-radius: 8px;
+      padding: 1.25rem;
+      height: 100%;
+      transition: all 0.3s ease;
+    }
+    .blog-card-item:hover {
+      background: #282828;
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+    .blog-tag-small {
+      display: inline-block;
+      background: #1db954;
+      color: #000;
+      padding: 0.2rem 0.6rem;
+      border-radius: 500px;
+      font-size: 0.65rem;
+      margin-right: 0.3rem;
+      margin-bottom: 0.3rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .blog-title {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+    .blog-title a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .blog-title a:hover {
+      color: #1db954;
+    }
+    .blog-date-small {
+      color: #b3b3b3;
+      font-size: 0.8rem;
+      margin-bottom: 0.5rem;
+    }
+    .blog-excerpt {
+      font-size: 0.85rem;
+      color: #b3b3b3;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+    .blog-btn {
+      background: transparent;
+      border: 1px solid #fff;
+      color: #fff;
+      font-weight: 700;
+      padding: 0.5rem 1.25rem;
+      border-radius: 500px;
+      transition: all 0.3s ease;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .blog-btn:hover {
+      background: #1db954;
+      color: #000;
+      border-color: #1db954;
+      transform: scale(1.05);
+    }
+    .blog-btn i {
+      transition: transform 0.3s ease;
+    }
+    .blog-btn:hover i {
+      transform: translateX(3px);
+    }
+    .blog-section-spotify {
+      background: #121212;
+      border-radius: 12px;
+      padding: 2rem;
+    }
+    .blog-section-spotify .section-title {
+      color: #fff;
+    }
+    .blog-section-spotify .text-muted {
+      color: #b3b3b3 !important;
+    }
+    /* Spotify Style for Blog Detail */
+    .blog-detail-header {
+      background: linear-gradient(180deg, #1db954 0%, #121212 100%);
+      padding: 3rem 0 4rem;
+      color: #fff;
+    }
+    .blog-detail-title {
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    .blog-detail-meta {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.95rem;
+    }
+    .blog-detail-content {
+      background: #121212;
+      padding: 3rem 0;
+      min-height: 50vh;
+    }
+    .blog-article-card {
+      background: #181818;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    }
+    .blog-article-card .article-content {
+      background: transparent;
+      color: #b3b3b3;
+    }
+    .blog-article-card .article-content p {
+      color: #b3b3b3;
+    }
+    .blog-article-card .article-content h2,
+    .blog-article-card .article-content h3 {
+      color: #fff;
+    }
+    .blog-article-card .article-content strong {
+      color: #fff;
+    }
+    .blog-article-card .article-content ul,
+    .blog-article-card .article-content ol {
+      color: #b3b3b3;
+    }
+    .blog-article-card .article-content a {
+      color: #1db954;
+    }
+    .blog-article-card .article-content a:hover {
+      text-decoration: underline;
+    }
+    .blog-article-card .article-content code {
+      background: #282828;
+      color: #1db954;
+    }
+    .blog-article-card .article-content pre {
+      background: #282828;
+      border: 1px solid #333;
+    }
+    .blog-article-card .article-content pre code {
+      color: #1db954;
+    }
+    .blog-article-card .article-content th,
+    .blog-article-card .article-content td {
+      border-color: #333;
+      color: #b3b3b3;
+    }
+    .blog-article-card .article-content th {
+      background: #282828;
+      color: #fff;
+    }
+    .btn-spotify {
+      background: #1db954;
+      color: #000;
+      font-weight: 700;
+      padding: 0.875rem 2rem;
+      border-radius: 500px;
+      border: none;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .btn-spotify:hover {
+      background: #1ed760;
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(29, 185, 84, 0.5);
+    }
+    .btn-spotify i {
+      transition: transform 0.3s ease;
+    }
+    .btn-spotify:hover i {
+      transform: translateX(-3px);
+    }
+    .btn-back {
+      background: transparent;
+      color: #fff;
+      border: none;
+      font-size: 0.9rem;
+      padding: 0.5rem 0;
+      transition: all 0.3s ease;
+      opacity: 0.8;
+    }
+    .btn-back:hover {
+      opacity: 1;
+      color: #1db954;
+    }
+    .btn-back i {
+      transition: transform 0.3s ease;
+    }
+    .btn-back:hover i {
+      transform: translateX(-5px);
+    }
+    .blog-tag-spotify {
+      display: inline-block;
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      padding: 0.35rem 0.85rem;
+      border-radius: 500px;
+      font-size: 0.75rem;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+    }
+    .blog-tag-spotify:hover {
+      background: #1db954;
+      color: #000;
+    }
+    .blog-tags-header {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-tabs">
+    <div class="container">
+      <nav class="nav py-2 justify-content-center" id="tabbar">
+        <a class="nav-link px-3{{ if eq .RelPermalink "/" }} active{{ end }}" href="/">Trang chính</a>
+        <a class="nav-link px-3" href="/#about">Về tôi</a>
+        <a class="nav-link px-3" href="/#skills">Kỹ năng</a>
+        <a class="nav-link px-3" href="/#contact">Liên hệ</a>
+        <a class="nav-link px-3" href="/#education">Học vấn</a>
+        <a class="nav-link px-3" href="/#experience">Kinh nghiệm</a>
+        <a class="nav-link px-3" href="/#projects">Dự án</a>
+        <a class="nav-link px-3" href="/#certificates">Chứng chỉ</a>
+        <a class="nav-link px-3" href="/#blog">Blog</a>
+      </nav>
+    </div>
+  </div>
+
+  {{ block "main" . }}{{ end }}
+
+  <footer class="text-center py-4 mt-5" style="background: #1a1a2e; color: #fff;">
+    <p class="mb-0">Được viết <i class="fas fa-heart" style="color: #1db954"></i> bởi Nguyễn Hữu Gia Lâm</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const sections = document.querySelectorAll('section[id], article[id], div[id]');
+      const navLinks = document.querySelectorAll('#tabbar .nav-link');
+      
+      function setActiveLink(id) {
+        navLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          const isActive = href === '#' + id || href === '/#' + id;
+          link.classList.toggle('active', isActive);
+        });
+      }
+
+      const obsOptions = { root: null, rootMargin: '-30% 0px -50% 0px', threshold: 0 };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting) {
+            setActiveLink(entry.target.id);
+          }
+        });
+      }, obsOptions);
+
+      sections.forEach(s => {
+        if(s.id) observer.observe(s);
+      });
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          const href = link.getAttribute('href');
+          if(href.startsWith('/#') || href.startsWith('#')) {
+            e.preventDefault();
+            const targetId = href.replace('/#', '#');
+            const targetEl = document.querySelector(targetId);
+            if(targetEl) {
+              navLinks.forEach(l => l.classList.remove('active'));
+              link.classList.add('active');
+              targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
